@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Библиотека</title>
+    <h:outputStylesheet library="css" name="style_index.css"  />
+</h:head>
+<h:body>
+
+    <div class="main">
+
+        <div class="content">
+            <p class="title"><h:graphicImage library="images" name="library.png" /></p>
+            <p class="title">Онлайн библиотека Русской Классики</p>
+        </div>
+
+        <div class="login_div">
+            <p class="title">Для входа введите свои  данные:</p>
+
+            <h:form styleClass="login_form">
+              <p>Имя</p>   <h:inputText id="username" value= "#{user2.username}" required="true" requiredMessage="Введите имя пользоваетля и пароль">
+                  <f:validator validatorId="my.web.validator.loginValidator"/>
+                </h:inputText>
+                <h:commandButton action="pages/books" value="Войти"/>
+                <p><h:message for="username" styleClass="error"/></p>
+            </h:form>
+
+        </div>
+
+
+        <div class="footer">
+            Роман Немчинов
+        </div>
+    </div>
+
+</h:body>
+
+
+</html>
